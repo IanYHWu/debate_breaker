@@ -26,13 +26,6 @@ Clone into directory using:
 
 ```git clone https://github.com/HerrHruby/debate_breaker.git```
 
-Alternatively, install with pip using:
-
-```pip install -i https://test.pypi.org/simple/ debate-breaker-HerrHruby==1.0.0```
-
-The package is currently hosted on TestPyPI. I will migrate this to PyPI once it is 
-properly published.
-
 
 # Usage
 
