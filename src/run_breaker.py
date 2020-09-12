@@ -3,7 +3,8 @@ Main program for debate breaker. Simulates many tournaments to obtain the break 
 """
 
 from collections import Counter
-from src import breaker_class, input_reader
+import breaker_class
+import input_reader
 import sys
 
 
