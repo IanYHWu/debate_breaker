@@ -27,6 +27,10 @@ def read_input(FILE):
                 input_dict['distribution'] = line.split(':')[1].strip()
             elif 'TRIALS' in line:
                 input_dict['trials'] = int(line.split(':')[1])
+            elif 'INPUT ROUND' in line:
+                input_dict['input_round'] = int(line.split(':')[1])
+            elif 'STD' in line:
+                input_dict['std'] = int(line.split(':')[1])
             # read in lines after 'STANDINGS' until 'end' as input round standings
             elif 'STANDINGS' in line:
                 for line in lines:
@@ -36,10 +40,6 @@ def read_input(FILE):
                         input_dict['standings'][int(line.split()[0])] = int(line.split()[1])
             elif 'end' or '' in line:
                 pass
-            elif 'INPUT ROUND' in line:
-                input_dict['input_round'] = int(line.split(':')[1])
-            elif 'STD' in line:
-                input_dict['std'] = int(line.split(':')[1])
             else:
                 raise Exception('Unknown input {}'.format(line))
 
