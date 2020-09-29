@@ -24,25 +24,25 @@ class Team:
             self.strength = self._set_uniform_strength()
 
     def get_points(self):
-        """Getter method for points"""
+        """Get team points points"""
         return self.points
 
     def set_points(self, points):
-        """Setter method for points"""
+        """Set team points"""
 
         self.points = points
 
     def get_strength(self):
-        """Getter method for strength"""
+        """Get strength"""
         return self.strength
 
     def increment_points(self, incr):
-        """Method to increase team points by amount incr"""
+        """Increment points by amount incr"""
         self.points += incr
 
     @staticmethod
     def _set_gaussian_strength(std):
-        """Sets the team strength based on a Gaussian distribution"""
+        """Set the team strength based on a Gaussian distribution"""
         mean = 0.5
         accept = False
         strength = 0
@@ -55,7 +55,7 @@ class Team:
 
     @staticmethod
     def _set_uniform_strength():
-        """Sets the team strength based on a uniform distribution"""
+        """Set the team strength based on a uniform distribution"""
         strength = random.uniform(0, 1)
         return strength
 
@@ -68,11 +68,11 @@ class Room:
         """
 
     def __init__(self, room_list):
-        """Initialises the Room class from room_list, a list of Teams"""
+        """Initialise the Room class from room_list, a list of Teams"""
         self.room = room_list
 
     def get_teams(self):
-        """Getter method for room_list"""
+        """Get room_list"""
         return self.room
 
     def random_debate(self):
@@ -90,7 +90,8 @@ class Room:
         self._call(strength_list)
 
     def _call(self, strength_list):
-        """Calls (i.e. determines the rankings) of a debate. The call is influenced by the strength of the Teams"""
+        """Generate call (i.e. determines the rankings) of a debate.
+        The call is influenced by the strength of the Teams"""
 
         # normalise the strengths
         strength_sum = sum(strength_list)
@@ -146,15 +147,15 @@ class NewTournament:
             self.tournament.append(Team(self.distribution, options))
 
     def get_round(self):
-        """Getter method for round"""
+        """Get the current round"""
         return self.round
 
     def get_break_count(self):
-        """Getter method for break_count"""
+        """Get the break_count"""
         return self.break_count
 
     def _quick_sort(self, s):  # s here is the tournament list i.e. self.tournament
-        """Sorts the teams in a tournament by the number of points they possess.
+        """Sort the teams in a tournament by the number of points they possess.
         Employs a recursive version of Quicksort. Returns a sorted list of Team objects"""
 
         # base case
@@ -180,7 +181,7 @@ class NewTournament:
         return self._quick_sort(smaller) + equal + self._quick_sort(bigger)
 
     def _hold_round(self):
-        """Simulates a single debate round. Assigns teams to their debate rooms, holds the debate,
+        """Simulate a single debate round. Assigns teams to their debate rooms, holds the debate,
         and then returns teams to the tournament. Increments the round.
         """
 
@@ -204,7 +205,7 @@ class NewTournament:
         self.round += 1
 
     def _get_results(self):
-        """Extracts the final results of a tournament. Returns Counter objects (dictionary-like)
+        """Extract the final results of a tournament. Returns Counter objects (dictionary-like)
         containing the results of the breaking teams, as well as the overall results"""
 
         break_count = self.get_break_count()
@@ -247,7 +248,7 @@ class RunningTournament(NewTournament):
         """
 
     def __init__(self, team_count, rounds, break_count, distribution, standings, input_round, options):
-        """Initialises the RunningTournament"""
+        """Initialise the RunningTournament"""
 
         NewTournament.__init__(self, team_count, rounds, break_count, distribution, options)
 

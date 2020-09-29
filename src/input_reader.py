@@ -4,7 +4,7 @@ File containing the input_reader function, for parsing input files
 
 
 def read_input(FILE):
-    """Reads in a sample input file and returns a dictionary containing the inputs to be used by the main program"""
+    """Read in a sample input file and returns a dictionary containing the inputs to be used by the main program"""
 
     input_dict = {'team_count': None,
                   'rounds': None,

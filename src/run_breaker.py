@@ -9,7 +9,7 @@ import sys
 
 
 def simulation(input_file):
-    """Function to simulate many debate tournaments using input from the read_input function in input_reader"""
+    """Simulate many debate tournaments using input from the read_input function in input_reader"""
 
     # read in input file contents in a dictionary
     input_dict = input_reader.read_input(input_file)
