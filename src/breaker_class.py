@@ -153,7 +153,7 @@ class NewTournament:
         """Getter method for break_count"""
         return self.break_count
 
-    def _quick_sort(self, s):
+    def _quick_sort(self, s):  # s here is the tournament list i.e. self.tournament
         """Sorts the teams in a tournament by the number of points they possess.
         Employs a recursive version of Quicksort. Returns a sorted list of Team objects"""
 

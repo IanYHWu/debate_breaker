@@ -24,8 +24,8 @@ def simulation(input_file):
 
     print('--------------------------')
     print('DEBATE BREAKER v1.0 \n')
-    print('Performing {} simulations for a tournament with {} teams, {} rounds and {} breaking teams'\
-        .format(trials, team_count, rounds, break_count))
+    print('Performing {} simulations for a tournament with {} teams, {} rounds and {} breaking teams' \
+          .format(trials, team_count, rounds, break_count))
     if input_round and standings:
         print('Starting from round {} using custom standings \n'.format(input_round))
     print('Team Strength Distribution: {}'.format(distribution))
@@ -51,11 +51,11 @@ def simulation(input_file):
     print('Complete!')
     print('--------------------------')
     for result in break_results:
-        final_results[result] = round(100*float(break_results[result])/total_results[result], 1)
+        final_results[result] = round(100 * float(break_results[result]) / total_results[result], 1)
 
     print('RESULTS \n')
 
-    straights = 2*rounds
+    straights = 2 * rounds
     min_printed = False
     for final_points in final_results:
         while not min_printed:
@@ -63,14 +63,13 @@ def simulation(input_file):
                   .format(final_points - 1, final_points - 1 - straights))
             min_printed = True
         if final_results[final_points] == 100.0:
-            print('The chance of breaking on {} points ({}) or above is ~100%'\
-                .format(final_points, final_points - straights))
+            print('The chance of breaking on {} points ({}) or above is ~100%' \
+                  .format(final_points, final_points - straights))
             break
-        print('The chance of breaking on {} points ({}) is {}%'\
-            .format(final_points, final_points - straights, final_results[final_points]))
+        print('The chance of breaking on {} points ({}) is {}%' \
+              .format(final_points, final_points - straights, final_results[final_points]))
 
 
 if __name__ == '__main__':
     f = sys.argv[1]
     simulation(f)
-
