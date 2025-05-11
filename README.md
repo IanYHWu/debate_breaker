@@ -24,7 +24,7 @@ against teams with lower strengths.
 
 Clone into directory using: 
 
-```git clone https://github.com/HerrHruby/debate_breaker.git```
+```https://github.com/IanYHWu/debate_breaker.git```
 
 
 # Usage
